@@ -12,9 +12,10 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'              " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'            " Project and file navigation
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
+"Plugin 'bling/vim-bufferline'
+Plugin 'tpope/vim-surround'
 call vundle#end()                       " required
 filetype on
 filetype plugin on                      " end of Vundle config
@@ -25,9 +26,37 @@ map <F3> :NERDTreeToggle<CR>
 "игноррируемые файлы с расширениями
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']  
 
-" Airline options
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='minimalist'
+" Lightline options
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \ }
+      \ }
+
+"function! MyBufferline()
+"  call bufferline#refresh_status()
+"  let b = g:bufferline_status_info.before
+"  let c = g:bufferline_status_info.current
+"  let a = g:bufferline_status_info.after
+"  let alen = strlen(a)
+"  let blen = strlen(b)
+"  let clen = strlen(c)
+"  let w = winwidth(0) * 4 / 9
+"  if w < alen+blen+clen
+"    let whalf = (w - strlen(c)) / 2
+"    let aa = alen > whalf && blen > whalf ? a[:whalf] : alen + blen < w - clen || alen < whalf ? a : a[:(w - clen - blen)]
+"    let bb = alen > whalf && blen > whalf ? b[-(whalf):] : alen + blen < w - clen || blen < whalf ? b : b[-(w - clen - alen):]
+"    return (strlen(bb) < strlen(b) ? '...' : '') . bb . c . aa . (strlen(aa) < strlen(a) ? '...' : '')
+"  else
+"    return b . c . a
+"  endif
+"endfunction
 
 " Set tab options
 set tabstop=4
