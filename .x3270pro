@@ -1,0 +1,50 @@
+! x3270 profile
+! File created Wed Jun 15 13:45:51 2016 by x3270 v3.3.14ga11 Sun Feb  7 10:16:10 UTC 2016 buildd
+! This file overrides xrdb and .Xdefaults.
+! To skip reading this file, set NOX3270PRO in the environment.
+!
+x3270.charset: cp1047
+x3270.emulatorFont: 3270
+x3270.oversize: 140x67
+x3270.idleCommandEnabled: False
+x3270.ShowTiming: True
+x3270.altCursor: False
+x3270.marginedPaste: True
+x3270.screenTrace: True
+x3270.blankFill: True
+x3270.keymap: mine
+x3270.keymap.mine: #override \
+    Ctrl <KeyPress>Next: Home() String("m") PF(8) \n\
+    Ctrl Mod2<KeyPress>Next: Home() String("m") PF(8) \n\
+    <KeyPress>Next: PF(8) \n\
+    Ctrl <KeyPress>Prior: Home() String("m") PF(7) \n\
+    Ctrl Mod2<KeyPress>Prior: Home() String("m") PF(7) \n\
+     <Key>Prior: PF(7) \n\
+    <KeyPress>End: FieldEnd() \n\
+    Mod2<KeyPress>End: FieldEnd() \n\
+    Shift Ctrl <KeyPress>Tab: Home() String("swap prev\n") \n\
+    Shift Ctrl Mod2<KeyPress>Tab: Home() String("swap prev\n") \n\
+    Ctrl <KeyPress>Tab: Home() String("swap next\n") \n\
+    Ctrl Mod2<KeyPress>Tab: Home() String("swap next\n") \n\
+    Ctrl <KeyPress>Up: Home() String("up 1\n") \n\
+    Ctrl Mod2<KeyPress>Up: Home() String("up 1\n") \n\
+    Ctrl <KeyPress>Down: Home() String("down 1\n") \n\
+    Ctrl Mod2<KeyPress>Down: Home() String("down 1\n") \n\
+    Ctrl <KeyPress>Return: BackTab() String("sub") \n\
+    Ctrl Mod2<KeyPress>Return: BackTab() String("sub") \n\
+    Ctrl <KeyPress>d: Home() String("start d.db\n") \n\
+    Ctrl Mod2<KeyPress>d: Home() String("start d.db\n") \n\
+    Ctrl <KeyPress>f: Home() String("start 3.4\n") \n\
+    Ctrl Mod2<KeyPress>f: Home() String("start 3.4\n") \n\
+    Ctrl <KeyPress>l: String("logon ts5671") \n\
+    Ctrl Mod2<KeyPress>l: String("logon ts5671") \n\
+    Ctrl <KeyPress>r: Home() String("ref\n") \n\
+    Ctrl Mod2<KeyPress>r: Home() String("ref\n") \n\
+    Ctrl <KeyPress>s: Home() String("save\n") \n\
+    Ctrl Mod2<KeyPress>s: Home() String("save\n") \n\
+    Ctrl <KeyPress>t: Home() String("start s.st\n") \n\
+    Ctrl Mod2<KeyPress>t: Home() String("start s.st\n") \n\
+    Ctrl <KeyPress>x: Home() String("=x\n") \n\
+    Ctrl Mod2<KeyPress>x: Home() String("=x\n") \n\
+    Ctrl <KeyPress>z: Home() String("\nundo\n") \n\
+    Ctrl Mod2<KeyPress>z: Home() String("\nundo\n") \n

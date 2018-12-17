@@ -167,9 +167,9 @@ syn match   xString     /[ ,]'\([^']\|''\)*'/ contained contains=xSymbol1
 syn match   xString1    /'\([^']\|''\)*'/ contained contains=xSymbol1
 
 "syn region xCommentBlock start=/@@combeg/ skip=/\n/ end=/@@comend/
-syn match xLineComment  /^\.\=\*.*\%<73c/
-syn match xContinue     /\%72c\S/
 syn match xLabel        /^\([@#$&.]\?[0-9a-z@$#_.]\+\)\|\s\{1,}/ skipwhite nextgroup=xOperation 
+syn match xLineComment  /^\.\=\*.*\%<73c/
+syn match xContinue     /\%71c\S/
 syn match xSpaceAndOp1  /^ \{1,14}/ skipwhite nextgroup=xOperation
 syn match xOperation    /[0-9a-z@$#&_]\+/ contained contains=xInstruction,xDirective,xBranch,xMacro skipwhite  nextgroup=xOperand,xOperandStr
 syn match xContinueLine /^ \{15}/ contains=xOperation nextgroup=xOperand

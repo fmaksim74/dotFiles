@@ -16,6 +16,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
 "Plugin 'bling/vim-bufferline'
 Plugin 'tpope/vim-surround'
+Plugin 'showmark2'
 call vundle#end()                       " required
 filetype on
 filetype plugin on                      " end of Vundle config
@@ -128,8 +129,8 @@ set laststatus=2
 colorscheme desert2
 
 " Set ColorColumn options
-highlight ColorColumn ctermbg=233 guibg=#2c2d27
-let &colorcolumn="16,72,80,".join(range(120,999),",")
+"highlight ColorColumn ctermbg=233 guibg=#2c2d27
+"let &colorcolumn="16,72,80,".join(range(120,999),",")
 
 " Show syntax
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
@@ -140,6 +141,9 @@ let &t_SR = "\<Esc>]50;CursorShape=2;BlinkingCursorEnabled=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0;BlinkingCursorEnabled=0\x7"
 
 "set rulerformat=%-30(%-10(%l,%c%)\ %{&enc},%{&ff}%=%P%)
+
+"set hilite row and column switch key
+":nnoremap H :set cursorline! cursorcolumn!<CR>
 
 " Clear grep parameters for full usage
 set grepprg=grep

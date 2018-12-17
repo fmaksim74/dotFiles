@@ -19,7 +19,7 @@ if version > 580
 	syntax reset
     endif
 endif
-let g:colors_name="desert"
+let g:colors_name="desert2"
 
 hi Normal	guifg=White guibg=grey20
 
@@ -76,7 +76,7 @@ hi IncSearch	cterm=NONE ctermfg=yellow ctermbg=green
 hi Search	cterm=NONE ctermfg=grey ctermbg=blue
 hi MoreMsg	ctermfg=darkgreen
 hi ModeMsg	cterm=NONE ctermfg=brown
-hi MatchParen ctermfg=yellow ctermbg=NONE
+hi MatchParen cterm=bold ctermfg=yellow ctermbg=NONE
 hi LineNr	ctermfg=3
 hi Question	ctermfg=green
 hi StatusLine	cterm=bold,reverse
@@ -105,5 +105,8 @@ hi Ignore	cterm=bold ctermfg=7
 hi Ignore	ctermfg=darkgrey
 hi Error	cterm=bold ctermfg=7 ctermbg=1
 
+" Set ColorColumn options
+hi ColorColumn ctermbg=233 guibg=#2c2d27
+let &colorcolumn="16,72,80,".join(range(120,999),",")
 
 "vim: sw=4
