@@ -1,1 +1,1 @@
-/usr/share/vim/addons/plugin/justify.vim
+C:/usr/share/vim/addons/plugin/justify.vim
